@@ -1,0 +1,8 @@
+{
+  "name": "pot2018app",
+  "app_id": "247103f2",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
