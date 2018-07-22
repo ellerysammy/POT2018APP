@@ -1,0 +1,14 @@
+accordion-list {
+    .wrapper {
+        transition: 0.2s linear;
+    }   
+    .collapsed {
+        height: 0 !important;
+    }
+    button {
+        align-items: baseline;
+    }
+    .bg-item-norma{
+        background: #F0F0F0;
+    }
+}
