@@ -1,4 +1,14 @@
-#imgbg{
-    width: 100% !important;
-    height: auto !important;
+page-home{
+    #imgbg{
+        width: 100% !important;
+        // height: auto !important;
+    }
+    .dvcontent-img{
+        width: 100% !important;
+        height: 90%;
+        background-image: url('../../assets/imgs/mapa_dpto.png');
+        background-size:     cover;        
+        background-repeat:   no-repeat;
+        // background-position: center center;
+    }
 }

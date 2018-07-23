@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { AccordionListComponent } from '../../components/accordion-list/accordion-list';
+import {InAppBrowser} from '@ionic-native/in-app-browser';
+
 
 @Component({
   selector: 'page-normativo',
@@ -9,38 +10,53 @@ import { AccordionListComponent } from '../../components/accordion-list/accordio
 export class NormativoPage {
     items: any = [];
     itemHeight: number = 0;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private theInAppBrowser: InAppBrowser) {
     this.items = [
         {
             name: "Norma Nacional", 
-            expanded: false, 
-            childs: [{ name: "Ley 1454" },{ name: "Ley 388" },{ name: "Ley Distritos" },{ name: "Ley Área Metropolitana" },{ name: "Ley Acuerdo COT" }]
+            expanded: true, 
+            childs: [
+                        { name: "Ley 1454 - 2011", url:"http://www.podbolivar2018.com/docs/normativa/Nacional/LEY%201454%20DE%202011.pdf" },
+                        { name: "Ley 388 - 1997", url:"http://www.podbolivar2018.com/docs/normativa/Nacional/ley%20388%20de%201997.pdf"  },
+                        { name: "Ley Distritos", url:"http://www.podbolivar2018.com/docs/normativa/Nacional/ley%201617%20de%202013.pdf" },
+                        { name: "Ley Área Metropolitana", url:"http://www.podbolivar2018.com/docs/normativa/Nacional/LEY%201625%20DEL%2029%20DE%20ABRIL%20DE%202013.pdf" },
+                        { name: "Acuerdo COT 010", url:"#" }
+                    ]
         },
         {
             name: "Norma Departamental", 
             expanded: false, 
-            childs: [{ name: "Ordenanza 153" },{ name: "Ordenanza 211" },{ name: "Ordenanza 187" },{ name: "Decreto 924" },{ name: "Resolución 706" }]
+            childs: [
+                        { name: "Ordenanza 153 - 2016", url:"http://www.podbolivar2018.com/docs/normativa/Departamental/ORDENANZA%20153%20DE%202016.pdf" },
+                        { name: "Ordenanza 213 - 2017", url:"http://www.podbolivar2018.com/docs/normativa/Departamental/Ordenanza%20No.%20213%20-%202017.pdf" },
+                        { name: "Ordenanza 188 - 2017", url:"http://www.podbolivar2018.com/docs/normativa/Departamental/Ordenanza%20No.%20188%20-%202017.pdf" },
+                        { name: "Decreto 924 - 2017", url:"http://www.podbolivar2018.com/docs/normativa/Departamental/Decreto%20No.%20924%20-%202017.pdf" },
+                        { name: "Resolución 706 - 2017", url:"http://www.podbolivar2018.com/docs/normativa/Departamental/Resolucion%20No.%20706%20-%202017.pdf" }
+                    ]
         },
         {
             name: "Otras Disposiciones", 
             expanded: false, 
-            childs: [{ name: "ODS" },{ name: "POTS Modernos - RIMIS" }]
+            childs: [
+                        { name: "ODS", url:"http://www.podbolivar2018.com/docs/normativa/OtrasDisposiciones/ODS%20-%20AGENDA%202030.pdf" },
+                        { name: "POTS Modernos - RIMIS", url:"#" }
+                    ]
         }
     ];
   }
-  expandItem(item){
- 
-    this.items.map((listItem) => {
+    expandItem(item){
+        this.items.map((listItem) => {
+            if(item == listItem){
+                listItem.expanded = !listItem.expanded;
+            } else {
+                listItem.expanded = false;
+            }
+            return listItem;
+        });
+    }
 
-        if(item == listItem){
-            listItem.expanded = !listItem.expanded;
-        } else {
-            listItem.expanded = false;
-        }
-
-        return listItem;
-
-    });
-
-}
+    public showDocument(url : string){
+        let target = "_system";
+        this.theInAppBrowser.create(url,target);//,this.options);
+    }
 }

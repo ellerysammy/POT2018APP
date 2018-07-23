@@ -1,23 +1,27 @@
 <ion-header>
-    <ion-navbar>
-        <button ion-button menuToggle>
-        <ion-icon name="menu"></ion-icon>
-        </button>
-        <ion-title>Normativa</ion-title>
-    </ion-navbar>
+
+  <ion-navbar>
+    <ion-title>Quienes Participan</ion-title>
+  </ion-navbar>
+
 </ion-header>
-<ion-content padding id="pageNormativa">
+
+
+<ion-content padding>
     <ion-list>
-        <span (click)="expandItem(item)" ion-item *ngFor="let item of items" class="norma-list">
+        <span (click)="expandItem(item)" ion-item *ngFor="let item of participantes">
             <!-- <ion-thumbnail item-start>
                 <img src="../../assets/imgs/norma_logo.svg"/>
             </ion-thumbnail> -->
             <!-- <ion-icon name="information-circle" class="norma-icon"></ion-icon> -->
             <h2>{{item.name}}</h2>
             <accordion-list height="itemHeight" [expanded]="item.expanded" *ngFor="let child of item.childs">
-                <ion-item (click)="showDocument(child.url);" class="bg-item-norma">
-                <h2><ion-icon name="attach"></ion-icon>&nbsp;{{child.name}}</h2>
-                </ion-item>
+              <ion-item class="bg-item-norma">
+                  <ion-thumbnail item-start>
+                    <img src="{{'../../assets/imgs/' + child.logo}}"/>
+                  </ion-thumbnail>
+                <h2>&nbsp;{{child.name}}</h2>
+              </ion-item>
             </accordion-list>
             <!-- <button ion-button clear item-end>Ver</button> -->
         </span>

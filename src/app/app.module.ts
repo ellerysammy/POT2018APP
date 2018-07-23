@@ -6,7 +6,10 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { NormativoPage } from '../pages/normativo/normativo';
+import { QuienesPage } from '../pages/quienes/quienes';
+import { ParticipanPage } from '../pages/participan/participan';
 import { AccordionListComponent } from '../components/accordion-list/accordion-list';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -17,7 +20,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     ListPage,
     NormativoPage,
-    AccordionListComponent
+    AccordionListComponent,
+    QuienesPage,
+    ParticipanPage
   ],
   imports: [
     BrowserModule,
@@ -28,11 +33,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     ListPage,
-    NormativoPage
+    NormativoPage,
+    QuienesPage,
+    ParticipanPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    InAppBrowser,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
