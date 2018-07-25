@@ -1,14 +1,20 @@
 page-home{
     #imgbg{
-        width: 100% !important;
-        // height: auto !important;
+        display:block;
+        width:100%;
+        height:auto;
+        margin-left:auto;
+        margin-right:auto;
     }
-    .dvcontent-img{
-        width: 100% !important;
-        height: 90%;
-        background-image: url('../../assets/imgs/mapa_dpto.png');
-        background-size:     cover;        
-        background-repeat:   no-repeat;
-        // background-position: center center;
+    .dvTitleButton h1{
+        width: 65%;
+        display: inline-block;
+        vertical-align: -webkit-baseline-middle;
+        margin: 0% !important;
+    }
+    .dvTitleButton button{
+        width: 32%;
+        display: inline-block;
+        vertical-align: -webkit-baseline-middle;
     }
 }

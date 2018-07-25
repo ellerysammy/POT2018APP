@@ -6,20 +6,26 @@
         <ion-title>Normativa</ion-title>
     </ion-navbar>
 </ion-header>
-<ion-content padding id="pageNormativa">
-    <ion-list>
-        <span (click)="expandItem(item)" ion-item *ngFor="let item of items" class="norma-list">
-            <!-- <ion-thumbnail item-start>
-                <img src="../../assets/imgs/norma_logo.svg"/>
-            </ion-thumbnail> -->
-            <!-- <ion-icon name="information-circle" class="norma-icon"></ion-icon> -->
-            <h2>{{item.name}}</h2>
-            <accordion-list height="itemHeight" [expanded]="item.expanded" *ngFor="let child of item.childs">
-                <ion-item (click)="showDocument(child.url);" class="bg-item-norma">
-                <h2><ion-icon name="attach"></ion-icon>&nbsp;{{child.name}}</h2>
+<ion-content padding id="pageNormativa" class="normativoPage">
+    <div id="dvNormativoSelect">
+        <ion-item id="normativo-select1">
+            <ion-label>
+            Normativa
+            </ion-label>
+            <ion-select name="ddlNormativa" [(ngModel)]="normaSelected" class="ddlNormativa">
+                <ion-option *ngFor="let norma of items" [value]="norma.value">
+                    {{norma.name}}
+                </ion-option>
+            </ion-select>
+        </ion-item>
+    </div>
+    <div *ngFor="let norma of items">
+        <ng-container *ngIf="norma.value === normaSelected">
+            <div class="dvNormativoLinks">
+                <ion-item (click)="showDocument(child.url);" class="bg-item-norma" *ngFor="let child of norma.childs">
+                    <h2><ion-icon name="attach"></ion-icon>&nbsp;{{child.name}}</h2>
                 </ion-item>
-            </accordion-list>
-            <!-- <button ion-button clear item-end>Ver</button> -->
-        </span>
-    </ion-list>
+            </div>
+        </ng-container>
+    </div>
 </ion-content>

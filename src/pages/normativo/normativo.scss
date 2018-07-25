@@ -1,10 +1,13 @@
-span.item-md{
-    padding-left: 0px !important;
-}
-ion-list.list span.norma-list{
-    padding: 0;
-}
-.norma-icon{
-    color : #009645;
-    font-size: 90px;
+page-normativo{
+    .normativoPage{
+        background-color:#009645;
+    }
+    .ddlNormativa{
+        max-width: 100% !important;
+    }
+    .dvNormativoLinks{
+        border: 1px solid #DCA44B;
+        margin-top: 5px;
+        width: 100%;
+    }
 }

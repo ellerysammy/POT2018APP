@@ -7,23 +7,29 @@
 </ion-header>
 
 
-<ion-content padding>
-    <ion-list>
-        <span (click)="expandItem(item)" ion-item *ngFor="let item of participantes">
-            <!-- <ion-thumbnail item-start>
-                <img src="../../assets/imgs/norma_logo.svg"/>
-            </ion-thumbnail> -->
-            <!-- <ion-icon name="information-circle" class="norma-icon"></ion-icon> -->
-            <h2>{{item.name}}</h2>
-            <accordion-list height="itemHeight" [expanded]="item.expanded" *ngFor="let child of item.childs">
-              <ion-item class="bg-item-norma">
-                  <ion-thumbnail item-start>
-                    <img src="{{'assets/imgs/' + child.logo}}"/>
-                  </ion-thumbnail>
-                <h2>&nbsp;{{child.name}}</h2>
-              </ion-item>
-            </accordion-list>
-            <!-- <button ion-button clear item-end>Ver</button> -->
-        </span>
-    </ion-list>
+<ion-content padding class="participanPage">
+    <div id="dvParticipanSelect">
+        <ion-item id="participan-select1">
+            <ion-label>
+            Quienes Participan
+            </ion-label>
+            <ion-select name="ddlParticipan" [(ngModel)]="participaSelected" class="ddlParticipa">
+                <ion-option *ngFor="let quien of participantes" [value]="quien.value">
+                    {{quien.name}}
+                </ion-option>
+            </ion-select>
+        </ion-item>
+    </div>
+    <div *ngFor="let quien of participantes">
+        <ng-container *ngIf="quien.value === participaSelected">
+            <div class="dvParticipaContent">
+                <ion-item class="bg-item-norma" *ngFor="let child of quien.childs">
+                    <ion-thumbnail item-start>
+                      <img src="{{'assets/imgs/' + child.logo}}"/>
+                    </ion-thumbnail>
+                    <h2>{{child.name}}</h2>
+                </ion-item>
+            </div>
+        </ng-container>
+    </div>
 </ion-content>
