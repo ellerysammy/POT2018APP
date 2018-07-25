@@ -15,18 +15,18 @@ export class ParticipanPage {
         name: "Autoridades Ambientales",
         value: "AMB",
         childs: [
-          {name: "Cardique", logo:"cardique.jpg"},
-          {name: "Corporación Autónoma Regional del Sur de Bolívar", logo:"csb.jpg"},
-          {name: "Establecimiento Público Ambiental", logo:"epa.jpg"},
-          {name: "Cormagdalena", logo:"cormagdalena.jpg"},
-          {name: "Parques Nacionales Naturales", logo:"pnn.jpg"}
+          {name: "Cardique", logo:"cardique.jpg", info: "3135742104"},
+          {name: "CSB", logo:"csb.jpg", info: "(5) 6878016"},
+          {name: "Establecimiento Público Ambiental", logo:"epa.jpg", info: "(5) 6644119"},
+          {name: "Cormagdalena", logo:"cormagdalena.jpg", info: "(5) 3565914"},
+          {name: "Parques Nacionales Naturales", logo:"pnn.jpg", info: "(5) 6655317"}
         ]
       },
       {
         name: "POTS Modernos",
         value: "PMO",
         childs: [
-          {name: "Inypsa", logo:"inypsa.png"}
+          {name: "Inypsa", logo:"inypsa.png", info: " (1) 3399631"}
         ]
       }
     ];

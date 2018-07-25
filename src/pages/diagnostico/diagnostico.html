@@ -26,7 +26,7 @@
             </ion-select>
         </ion-item>
     </div>
-    <div *ngFor="let diag of items">
+    <div *ngFor="let diag of items" class="dvDiagnosticoContent">
         <ng-container *ngIf="diag.value === diagnosticoSelected">
             <div class="dvDiagnosticoLinks">
                 <ion-item (click)="showDocument(child.url);" class="bg-item-norma" *ngFor="let child of diag.childs">

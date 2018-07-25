@@ -19,7 +19,7 @@
             </ion-select>
         </ion-item>
     </div>
-    <div *ngFor="let norma of items">
+    <div *ngFor="let norma of items" class="dvNormasContent">
         <ng-container *ngIf="norma.value === normaSelected">
             <div class="dvNormativoLinks">
                 <ion-item (click)="showDocument(child.url);" class="bg-item-norma" *ngFor="let child of norma.childs">

@@ -21,6 +21,23 @@
         </ion-item>
     </div>
     <div *ngFor="let quien of participantes">
+        <ion-slides pager *ngIf="quien.value === participaSelected" class="slidesParticipan">
+            <ion-slide class="dvParticipaContent" *ngFor="let child of quien.childs">
+                <ion-card>
+                    <img src="{{'assets/imgs/' + child.logo}}"/>
+                    <ion-card-content>
+                        <ion-card-title>
+                            {{child.name}}
+                        </ion-card-title>
+                        <p>
+                                <ion-icon name="phone-portrait" class="phone-icon"></ion-icon>&nbsp;&nbsp;<a href="{{'tel:+57' + child.info}}" class="button button-positive">+57 - {{child.info}}</a>
+                        </p>
+                    </ion-card-content>
+                </ion-card>
+            </ion-slide>
+        </ion-slides>
+    </div>
+    <!-- <div *ngFor="let quien of participantes">
         <ng-container *ngIf="quien.value === participaSelected">
             <div class="dvParticipaContent">
                 <ion-item class="bg-item-norma" *ngFor="let child of quien.childs">
@@ -31,5 +48,5 @@
                 </ion-item>
             </div>
         </ng-container>
-    </div>
+    </div> -->
 </ion-content>

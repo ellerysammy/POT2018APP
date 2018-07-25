@@ -13,4 +13,24 @@ page-participan {
     .dvParticipaContent h2{
         white-space: normal;
     }
+    .slidesParticipan{
+        margin-top: 20px;
+    }
+    .swiper-pagination {
+        padding: 3px;
+        bottom:0px;
+        margin-top: 100px;
+        display: block;
+        .swiper-pagination-bullet {
+            // background: #FFF;
+            margin: 0 3px;
+        }
+    }
+    div.swiper-pagination {
+        top:inherit;
+        bottom:100%;
+     }
+     .phone-icon{
+         color: #009645;
+     }
 }
