@@ -15,7 +15,7 @@ export class ParticipanPage {
         name: "Autoridades Ambientales",
         value: "AMB",
         childs: [
-          {name: "Cardique", logo:"cardique.jpg", info: "3135742104"},
+          {name: "Cardique", logo:"cardique.png", info: "3135742104"},
           {name: "CSB", logo:"csb.jpg", info: "(5) 6878016"},
           {name: "Establecimiento Público Ambiental", logo:"epa.jpg", info: "(5) 6644119"},
           {name: "Cormagdalena", logo:"cormagdalena.jpg", info: "(5) 3565914"},
