@@ -23,7 +23,7 @@
         <ng-container *ngIf="norma.value === normaSelected">
             <div class="dvNormativoLinks">
                 <ion-item (click)="showDocument(child.url);" class="bg-item-norma" *ngFor="let child of norma.childs">
-                    <h2><ion-icon name="attach"></ion-icon>&nbsp;{{child.name}}</h2>
+                    <h2><ion-icon name="attach" class="icon-normativo-list"></ion-icon>&nbsp;{{child.name}}</h2>
                 </ion-item>
             </div>
         </ng-container>

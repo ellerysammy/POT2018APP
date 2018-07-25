@@ -1,0 +1,38 @@
+<!--
+  Generated template for the DiagnosticoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Diagnostico</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="diagnosticoPage">
+    <div id="dvDiagnosticoSelect">
+        <ion-item id="diagnostico-select1">
+            <ion-label>
+            Diagnóstico
+            </ion-label>
+            <ion-select name="ddlDiagnostico" [(ngModel)]="diagnosticoSelected" class="ddlDiagnostico">
+                <ion-option *ngFor="let diag of items" [value]="diag.value">
+                    {{diag.name}}
+                </ion-option>
+            </ion-select>
+        </ion-item>
+    </div>
+    <div *ngFor="let diag of items">
+        <ng-container *ngIf="diag.value === diagnosticoSelected">
+            <div class="dvDiagnosticoLinks">
+                <ion-item (click)="showDocument(child.url);" class="bg-item-norma" *ngFor="let child of diag.childs">
+                    <h2><ion-icon [name]="diag.groupicon" class="icon-patrimonio-list"></ion-icon>&nbsp;&nbsp;{{child.name}}</h2>
+                </ion-item>
+            </div>
+        </ng-container>
+    </div>
+</ion-content>

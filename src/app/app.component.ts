@@ -7,6 +7,8 @@ import { HomePage } from '../pages/home/home';
 import { NormativoPage } from '../pages/normativo/normativo';
 import { QuienesPage } from '../pages/quienes/quienes';
 import { ParticipanPage } from '../pages/participan/participan';
+import { MotPage } from '../pages/mot/mot';
+import { DiagnosticoPage } from '../pages/diagnostico/diagnostico';
 
 @Component({
   templateUrl: 'app.html'
@@ -27,7 +29,9 @@ export class MyApp {
       //{ title: 'List', component: ListPage },
       { title: 'Normativo', component: NormativoPage},
       { title: 'Quienes Somos', component: QuienesPage},
-      { title: 'Quienes Participan', component: ParticipanPage}
+      { title: 'Quienes Participan', component: ParticipanPage},
+      { title: 'Diagnóstico', component: DiagnosticoPage},
+      { title: 'MOT', component: MotPage}
     ];
 
   }

@@ -8,6 +8,8 @@ import { ListPage } from '../pages/list/list';
 import { NormativoPage } from '../pages/normativo/normativo';
 import { QuienesPage } from '../pages/quienes/quienes';
 import { ParticipanPage } from '../pages/participan/participan';
+import { MotPage } from '../pages/mot/mot';
+import { DiagnosticoPage } from '../pages/diagnostico/diagnostico';
 import { AccordionListComponent } from '../components/accordion-list/accordion-list';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 
@@ -22,7 +24,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     NormativoPage,
     AccordionListComponent,
     QuienesPage,
-    ParticipanPage
+    ParticipanPage,
+    MotPage,
+    DiagnosticoPage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ListPage,
     NormativoPage,
     QuienesPage,
-    ParticipanPage
+    ParticipanPage,
+    MotPage,
+    DiagnosticoPage
   ],
   providers: [
     StatusBar,
